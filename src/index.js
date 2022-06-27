@@ -27,4 +27,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 });
             }
         })
-    
+        //On select change, filtered throught the lists array and displayed them
+        document.querySelector("#breed-dropdown").addEventListener("change", f=>{
+            let ss = f.target.value;
+            let c = lis.filter(b=>b.textContent.charAt(0)==ss);
+            document.querySelector("#dog-breeds").innerHTML = ""
+            c.forEach(s=>{
+                document.querySelector("#dog-breeds").append(s);
+            })
+        })
+    })
